@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,53 @@
     <link rel="stylesheet" href="output.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-        </style>
+    </style>
 </head>
+
 <body class="bg-gradient-to-r from-gradientStart via-yellow-400 to-gradientEnd h-fit w-full">
-  <span class="text-textcolor sm:text-6xl text-4xl sm:absolute top-16 left-[12%] font-Edu flex justify-center text-center ">system to do list</span>
-  <div class="w-[80%] h-2 flex justify-self-center  mt-48 bg-white rounded-3xl mb-6 "></div>
-<div class="justify-self-center w-[80%] h-fit border-1 border-white shadow-lg shadow-textcolor drop-shadow-lg p-4  flex justify-between items-center sm:flex-row flex-col gap-5 ">
-   <div class="h-12 w-[40%] bg-white rounded-xl flex justify-between p-2 items-center   ">
-<div class="flex gap-2 items-center">
-    <input type="checkbox" class="w-9 h-9 rounded-full bg-white drop-shadow-lg shadow-textcolor shadow-sm  ">
+    <span
+        class="text-textcolor sm:text-6xl text-4xl sm:absolute top-16 left-[12%] font-Edu flex justify-center text-center ">system
+        to do list</span>
+    <div class="w-[80%] h-2 flex justify-self-center  mt-48 bg-white rounded-3xl mb-6 "></div>
+    <div
+        class="justify-self-center w-[80%] h-fit border-1 border-white shadow-lg shadow-textcolor drop-shadow-lg p-4  flex justify-between items-center sm:flex-row flex-col gap-5 flex-wrap ">
+        <div class="h-12 w-[40%] bg-white rounded-xl flex justify-between p-2 items-center   ">
+            <div class="flex gap-2 items-center">
+                <input type="checkbox"
+                    class="w-9 h-9 rounded-full bg-white drop-shadow-lg shadow-textcolor shadow-sm  ">
 
-    </input>
- 
-    <span class="text-3xl font-mont">titre de tache</span>
-</div>
-<button class="text-red-500 text-xl">
-    X
-</button>
-   </div>
+                </input>
 
-   
-  
+                <span class="text-3xl font-mont">titre de tache</span>
+            </div>
+            <button class="text-red-500 text-xl">
+                X
+            </button>
+        </div>
 
-</div>
 
+
+    </div>
+    <div class=" w-full absolute bottom-4 p-8 flex justify-between  ">
+        <button class="w-24 h-24 bg-textcolor rounded-full">
+            <img src="/icons/filter_alt_30dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="">
+        </button>
+        <div class="flex  items-center flex-col gap-5">
+            <div class="space-y-2 hidden" id="ouvrir_creation_deTache">
+            <div class="h-12  bg-white rounded-xl flex justify-between p-2 items-center  ">
+                <input class="text-xl font-mont outline-none" placeholder="ecrire le tache" id="tache">
+            </div>
+            <div class="flex flex-row  justify-self-end gap-3  ">
+                <button class="bg-red-500 shadow-sm shadow-black text-white px-2 " id="cancelAdd">cancel</button>
+                <button class=" bg-green-400 shadow-sm shadow-black text-white px-2 " id="confermerAdd">add</button>
+            </div>
+        </div>
+            <button id="addIcon" class="w-24 h-24 bg-textcolor rounded-full  ">
+                <img src="/icons/add_30dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="">
+            </button>
+        </div>
+    </div>
 </body>
+<script src="/script.js"></script>
+
 </html>
