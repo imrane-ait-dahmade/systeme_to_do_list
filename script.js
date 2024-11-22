@@ -6,10 +6,7 @@ const ouvrir = document.getElementById('ouvrir_creation_deTache');
 
 
 add.addEventListener('click', () => {
-
-
     ouvrir.classList.toggle('hidden');
-
 
 });
 document.getElementById('cancelAdd').addEventListener('click', () => {
@@ -35,7 +32,7 @@ document.getElementById('confermerAdd').addEventListener('click', () => {
             createtache(tache);
             ouvrir.classList.add('hidden');
             input_tache.value = '';
-           
+
 
         }
     }
@@ -48,20 +45,31 @@ function createtache(tache) {
     place.appendChild(box);
     box.innerHTML = `
 <div class="flex gap-2 items-center">
-                <input type="checkbox" aria-checked=${tache.statue}
+                <input type="checkbox" id="checked${tache.id}"
                     class="w-9 h-9 rounded-full bg-white drop-shadow-lg shadow-textcolor shadow-sm  ">
                 </input>
-                <span class="text-3xl font-mont ">${tache.titre}</span>
+                <span class="text-3xl font-mont  ">${tache.titre}</span>
             </div>
             <button class="text-red-500 text-xl" id=button${tache.id}>
                 X
             </button>`
-const deletebutton = document.getElementById(`button${tache.id}`);
-deletebutton.addEventListener('click', () =>{
-    del(tache.id);
-   
-})
-
+    const deletebutton = document.getElementById(`button${tache.id}`);
+    deletebutton.addEventListener('click', () => {
+        del(tache.id);
+      
+    })
+    const checkboxtache = document.getElementById(`checked${tache.id}`);
+    checkboxtache.addEventListener('change', () => {
+        if(checkboxtache.checked == true){
+            box.classList.add('opacity-40');
+            tache.statue = true;
+        }
+        else{
+            box.classList.remove('opacity-40');
+            tache.statue =false;
+        }           
+    })
+    
 }
 
 function del(tacheId) {
@@ -72,6 +80,16 @@ function del(tacheId) {
     const removebox = document.getElementById(tacheId);
     removebox.remove();
 }
+document.getElementById('filtrer').addEventListener('click', () => {
+   
+    let tachetrue = Taches.filter(tache =>tache.statue == false);
+    for(let i = 0; i<=tachetrue.length ; i++){
+const tachenot = document.getElementById(tachetrue[i].id);
+tachenot.classList.toggle('hidden');
+document.getElementById('filtrer').classList.toggle('bg-gradientStart');
+    }
+
+});
 
 
 
